@@ -4,7 +4,7 @@ This repository is an installable server deployment package that locks down the 
 
 **Note:** If you want to see current snapshots of OMOPonFHIR components or other versions of FHIR and OMOP, please visit the OMOPonFHIR GitHub organization at https://github.com/omoponfhir/
 
-This package is tested with Google Big Query instance. And, the server supports mapping for FHIR R4 and OMOP v5.3. Please see omopv5_3_setup/ folder for some help on ddls for extra tables/views. Database ddls are also included. 
+This package is tested with Google Big Query instance. And, the server supports mapping for FHIR R4 and OMOP v5.4. Please see omopv5_4_setup/ folder for some help on ddls for extra tables/views. Database ddls are also included. 
 
 ```
 **Note:** This repository contains submodules of anoter repositories that are needed. If you want to participate in 
