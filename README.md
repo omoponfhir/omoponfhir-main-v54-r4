@@ -26,8 +26,8 @@ Refer the follow repositories and use the latest to work on the code.
         
 ## Download the package
 ```
-git clone --recurse https://github.com/omoponfhir/omoponfhir-main-r4-sql.git
-cd omoponfhir-main-r4-sql/
+git clone --recurse https://github.com/omoponfhir/omoponfhir-main-v54-r4.git
+cd omoponfhir-main-v54-r4/
 mvn clean install
 cd omoponfhir-r4-server/target/
 scp omoponfhir-r4-server.war <vm url>:omoponfhir-r4-server.war
