@@ -9,6 +9,9 @@ FROM tomcat:9.0.65-jre17
 #set environment variables below and uncomment the line. Or, you can manually set your environment on your server.
 #ENV JDBC_URL=jdbc:postgresql://<host>:<port>/<database> JDBC_USERNAME=<username> JDBC_PASSWORD=<password>
 
+# Copies updated server.xml to increase HTTP Header Length allowed
+COPY server.xml /usr/local/tomcat/conf/
+
 # Copy GT-FHIR war file to webapps.
 COPY --from=builder /usr/src/app/omoponfhir-r4-server/target/omoponfhir-r4-server.war $CATALINA_HOME/webapps/ROOT.war
 
