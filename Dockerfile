@@ -10,7 +10,7 @@ FROM tomcat:9.0.65-jre17
 #ENV JDBC_URL=jdbc:postgresql://<host>:<port>/<database> JDBC_USERNAME=<username> JDBC_PASSWORD=<password>
 
 # Copies updated server.xml to increase HTTP Header Length allowed
-COPY server.xml /usr/local/tomcat/conf/
+COPY server.xml $CATALINA_HOME/conf/
 
 # Copy GT-FHIR war file to webapps.
 COPY --from=builder /usr/src/app/omoponfhir-r4-server/target/omoponfhir-r4-server.war $CATALINA_HOME/webapps/ROOT.war
