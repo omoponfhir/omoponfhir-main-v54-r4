@@ -1,0 +1,18 @@
+{
+	"folders": [
+		{
+			"path": "../Desktop/omop-server/omoponfhir-r4-server"
+		},
+		{
+			"name": "omoponfhir-omopv5-r4-mapping",
+			"path": "../Desktop/omop-mapping/omoponfhir-omopv5-r4-mapping"
+		},
+		{
+			"name": "omoponfhir-omopv5-sql",
+			"path": "../Desktop/omop-sql/omoponfhir-omopv5-sql"
+		}
+	],
+	"settings": {
+		"java.configuration.updateBuildConfiguration": "interactive"
+	}
+}
