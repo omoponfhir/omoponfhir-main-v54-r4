@@ -33,6 +33,10 @@ cd omoponfhir-r4-server/target/
 scp omoponfhir-r4-server.war <vm url>:omoponfhir-r4-server.war
 ```
 
+## Prepare your OMOP database
+
+If you don't have a OMOP database yet, you will need to create one. In case you already have one you will need to add additional tables for it to work with this tool. For both these cases you can use https://github.com/omoponfhir/omopv5_4_setup as a reference and start at either step 1 or 6.
+
 ## Deploy to tomcat ##
 ```
 cp omoponfhir-r4-server.war <tomcat_directory>/webapps/
@@ -73,5 +77,8 @@ export BIGQUERYDATASET="<BigQuery Dataset Name. It will be ignored if TARGETDATA
 export BIGQUERYPROJECT="<BigQuery Project Name. It will be ignored if TARGETDATABASE is not bigquery>"
 ```
 
-## Docker deployment
-This is not yet tested and validated. The same environment variables are applied here. The environment variable must be defined either using Dockerfile or docker command line when the docker image is instantiated to start running.
+## Configuration of Docker deployment
+This is not yet tested and validated. The same environment variables are applied here. The environment variable must be defined either using Dockerfile or docker command line when the docker image is instantiated to start running. One way to do this would be to create a env.list file containing the variables from above and then running the following command to start your deployment:
+```
+docker run --env-file env.list --name omoponfhir -p 8080:8080 -d omoponfhir:latest
+```
