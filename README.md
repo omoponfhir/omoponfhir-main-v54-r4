@@ -37,6 +37,21 @@ scp omoponfhir-r4-server.war <vm url>:omoponfhir-r4-server.war
 
 If you don't have a OMOP database yet, you will need to create one. In case you already have one you will need to add additional tables for it to work with this tool. For both these cases you can use https://github.com/omoponfhir/omopv5_4_setup as a reference and start at either step 1 or 6.
 
+## Setting up vocabulary schema 
+
+If you want to setup (or have) vocabulary schema, you can make OMOPonFHIR to point to the vocabulary schema for all vocabulary tables. In the vocabulary schema, the tables defined here must exist (https://github.com/SmartChartSuite/Registry-Database/blob/main/omoponfhir_v5_4_setup/OMOPCDM_postgresql_5.4_vocabulary_ONLY_ddl.sql) 
+
+With this setting, you can run multiple OMOPonFHIR instances with the same vocabulary schema. This makes the vocabulary management easier. Please note that All schemas must exist in the same database. 
+
+Once the schemas are set up, you need the following environment variables to specify schemas for data and vocabulary.
+
+```
+export JDBC_DATA_SCHEMA="omopv54"
+export JDBC_VOCABS_SCHEMA="vocab"
+```
+
+The variables above assume that vocabulary related tables are in "vocab" schema, and data are in "omopv54" schema.  
+
 ## Deploy to tomcat ##
 ```
 cp omoponfhir-r4-server.war <tomcat_directory>/webapps/
