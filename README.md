@@ -44,6 +44,11 @@ vi setenv.sh
 sudo docker build -t omoponfhir .
 sudo docker run --name omoponfhir -p 8080:8080 -d omoponfhir:latest
 ```
+
+OMOPonFHIR is a web application. If it's deployed using Docker, then you need to get how war file is deployed in the dockerfile. Default is set to ROOT.war, which means it's running at the / path. If you are running omoponfhir on your local PC, you can use your browser with URL, http://localhost:8080/, to launch test overlay HAPI FHIR GUI. Please note that the port number depends one the docker run command above. If you are running omoponfhir on the remote server, then you need to use the remote server's URL. In both cases, please make sure your firewall is not blocking the traffic.
+
+OMOPonFHIR provides FHIR APIs and operations. The HAPI FHIR GUI is a FHIR client running separately. So, even if this is not running correctly, the services may be running. The FHIR API URL for OMOPonFHIR http://localhost(or server hostname):8080/fhir. You can do GET http://localhost(or server hostname):8080/fhir/metadata to see if OMOPonFHIR is running OK. In most cases, if services are not running, it's because of the database connection and its credential. Please check this in your environment variable. 
+
 ## Configuration of webapp
 In setenv.sh file, add the following environment variables. Change the values for your environment 
 ```
