@@ -53,6 +53,9 @@ export JDBC_PASSWORD="<your password of JDBC DB instance>"
 # export JDBC_DRIVER="org.postgresql.Driver"
 export JDBC_DATASOURCENAME="org.postgresql.ds.PGSimpleDataSource"
 export JDBC_POOLSIZE=5
+# And, belows are schema naems for data and vocabulary in the database specified above.
+export JDBC_DATA_SCHEMA="public"
+export JDBC_VOCABS_SCHEMA="public"
 export SMART_INTROSPECTURL="<your_omoponfhir_root_server_NOT_a_fhir_url_base, eg: localhost:8080/omoponfhir-dstu2-server/>/smart/introspect"
 export SMART_AUTHSERVERURL="<your_omoponfhir_root_server_NOT_a_fhir_url_base>/smart/authorize"
 export SMART_TOKENSERVERURL="<your_omoponfhir_root_server_NOT_a_fhir_url_base>/smart/token"
